@@ -1,0 +1,27 @@
+{
+  "name": "carma-reviews",
+  "version": "1.0.0",
+  "description": "Social media/car review aggregator website grabbing data using a web scraper with a node.js backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnnyDHo/CARma-Reviews.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JohnnyDHo/CARma-Reviews/issues"
+  },
+  "homepage": "https://github.com/JohnnyDHo/CARma-Reviews#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^6.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "request": "^2.88.0"
+  }
+}
