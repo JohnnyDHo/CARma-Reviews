@@ -12,6 +12,8 @@ axios.get('https://cars.usnews.com/cars-trucks/toyota/camry')
             var reliability = [];
             var ranking = [];
             var awards = [];
+            var name = [];
+            var image = [];
             $('.scorecard__overall-score-container').each(function(i, elem) {
                 verdict[i] = {
                     overall: $(this).children('.scorecard__score-label').text() + ': ' + $(this).children('.scorecard__score').text()
@@ -37,7 +39,17 @@ axios.get('https://cars.usnews.com/cars-trucks/toyota/camry')
                     award: $(this).text()
                 }
             });
-            var combined = verdict.concat(other, reliability, ranking, awards);
+            $('.hero-title__header--overview').each(function(i, elem) {
+                name[i] = {
+                    car_name: $(this).text()
+                }
+            });
+            $('.vwo-photos-header-image').each(function(i, elem) {
+                image[i] = {
+                    imgs: $(this).children('img').attr('src')
+                }
+            });
+            var combined = name.concat(verdict, other, reliability, ranking, awards, image);
             fs.writeFile('data/us-news.json',
                 JSON.stringify(combined, null, 4), (err)=>{
                     console.log('File successfully written!');
